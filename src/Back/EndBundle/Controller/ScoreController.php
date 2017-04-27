@@ -22,7 +22,7 @@ class ScoreController extends Controller
 
         $scores = $em->getRepository('BackEndBundle:Score')->findAll();
 
-        return $this->render('score/index.html.twig', array(
+        return $this->render('BackEndBundle:Score:index.html.twig', array(
             'scores' => $scores,
         ));
     }
@@ -45,7 +45,7 @@ class ScoreController extends Controller
             return $this->redirectToRoute('score_show', array('id' => $score->getId()));
         }
 
-        return $this->render('score/new.html.twig', array(
+        return $this->render('BackEndBundle:Score:new.html.twig', array(
             'score' => $score,
             'form' => $form->createView(),
         ));
@@ -59,7 +59,7 @@ class ScoreController extends Controller
     {
         $deleteForm = $this->createDeleteForm($score);
 
-        return $this->render('score/show.html.twig', array(
+        return $this->render('BackEndBundle:Score:show.html.twig', array(
             'score' => $score,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -81,7 +81,7 @@ class ScoreController extends Controller
             return $this->redirectToRoute('score_edit', array('id' => $score->getId()));
         }
 
-        return $this->render('score/edit.html.twig', array(
+        return $this->render('BackEndBundle:Score:edit.html.twig', array(
             'score' => $score,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

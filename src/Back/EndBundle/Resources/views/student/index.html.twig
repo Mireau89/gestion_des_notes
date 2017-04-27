@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="box-header with-border">
+        <h3 class="box-title">Student list</h3>
+        <a href="{{ path('student_new') }}" class="btn btn-default" style="float: right;">Add a new student</a>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 20px">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Identificateur</th>
+                <th>Code Inscription</th>
+                <th>Prénom</th>
+                <th>nom</th>
+                <th>Age</th>
+                <th>Genre</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for student in students %}
+                <tr>
+                    <td><a href="{{ path('student_show', { 'id': student.id }) }}">{{ student.id }}</a></td>
+                    <td>{{ student.insCode }}</td>
+                    <td>{{ student.firstName }}</td>
+                    <td>{{ student.lastName }}</td>
+                    <td>{{ student.age }}</td>
+                    <td>{{ student.gender }}</td>
+                    <td>
+                        <ul class="list-unstyled">
+                            <li style="float: left;padding-right: 5px">
+                               <a href="{{ path('student_show', { 'id': student.id }) }}" class="btn btn-default">show</a>
+                            </li>
+                            <li>
+                             <a href="{{ path('student_edit', { 'id': student.id }) }}" class="btn btn-default">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

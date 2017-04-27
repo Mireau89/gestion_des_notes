@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="box-header with-border">
+        <h3 class="box-title">Modules list</h3>
+        <a href="{{ path('module_new') }}" class="btn btn-default" style="float: right;">Add a new module</a>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 20px">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Identificateur</th>
+                <th>Nom</th>
+                <th>Abbréviation</th>
+                <th>Nombre d'éléments</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for module in modules %}
+                <tr>
+                    <td><a href="{{ path('module_show', { 'id': module.id }) }}">{{ module.id }}</a></td>
+                    <td>{{ module.name }}</td>
+                    <td>{{ module.abbr }}</td>
+                    <td>{{ module.elementNbr }}</td>
+                    <td>
+                        <ul class="list-unstyled">
+                            <li style="float: left;padding-right: 5px">
+                               <a href="{{ path('module_show', { 'id': module.id }) }}" class="btn btn-default">show</a>
+                            </li>
+                            <li>
+                               <a href="{{ path('module_edit', { 'id': module.id }) }}" class="btn btn-default">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

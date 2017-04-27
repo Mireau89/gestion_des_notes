@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="box-header with-border">
+        <h3 class="box-title">Student edit</h3>
+        <ul class="list-unstyled" style="float:right;">
+            <li style="float: left;padding-right: 5px;">
+              <a href="{{ path('student_index') }}" class="btn btn-default">Back to the list</a>
+            </li>
+
+            <li style="float: left;">{{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-warning">
+                {{ form_end(delete_form) }}</li>
+        </ul>
+    </div>
+    <div class="container" style="padding-top: 10px;">
+        {{ form_start(edit_form) }}
+        <div class="form-group row">
+            <div class="col-md-2 col-md-offset-2">
+                {{ form_label(edit_form.insCode, null, {'label':'Code Inscription'}) }}
+            </div>
+            <div class="col-md-5">
+                {{ form_widget(edit_form.insCode, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2 col-md-offset-2">
+                {{ form_label(edit_form.firstName, null, {'label':'Prénom'}) }}
+            </div>
+            <div class="col-md-5">
+                {{ form_widget(edit_form.firstName, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2 col-md-offset-2">
+                {{ form_label(edit_form.lastName, null, {'label':'Nom'}) }}
+            </div>
+            <div class="col-md-5">
+                {{ form_widget(edit_form.lastName, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2 col-md-offset-2">
+                {{ form_label(edit_form.age, null, {'label':'Age'}) }}
+            </div>
+            <div class="col-md-5">
+                {{ form_widget(edit_form.age, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2 col-md-offset-2">
+                {{ form_label(edit_form.gender, null, {'label':'Genre'}) }}
+            </div>
+            <div class="col-md-5">
+                {{ form_widget(edit_form.gender, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2 col-md-offset-4">
+                <input type="submit" value="Edit" class="btn btn-primary btn-lg"/>
+            </div>
+
+        </div>
+        {{ form_end(edit_form) }}
+    </div>
+
+{% endblock %}

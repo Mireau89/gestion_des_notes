@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="box-header with-border">
+        <h3 class="box-title">Score</h3>
+        <ul class="list-unstyled" style="float:right;">
+            <li style="float: left;padding-right: 5px;">
+                <a href="{{ path('score_index') }}" class="btn btn-default">Back to the list</a>
+            </li>
+            <li style="float: left;padding-right: 5px;">
+                <a href="{{ path('score_edit', { 'id': score.id }) }}" class="btn btn-default">Edit</a>
+            </li>
+            <li style="float: left;">{{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-warning">
+                {{ form_end(delete_form) }}</li>
+        </ul>
+    </div>
+
+<div class="container-fluid" style="max-width: 400px;margin-top: 20px">
+    <table class="table table-bordered table-hover">
+        <tbody>
+            <tr>
+                <th>Identificateur</th>
+                <td>{{ score.id }}</td>
+            </tr>
+            <tr>
+                <th>Note sur 20</th>
+                <td>{{ score.testScore }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

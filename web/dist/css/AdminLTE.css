@@ -1314,6 +1314,9 @@ a:focus {
   background-color: #fff;
 }
 /* button groups */
+a{
+  display: block;
+}
 .btn-group-vertical .btn.btn-flat:first-of-type,
 .btn-group-vertical .btn.btn-flat:last-of-type {
   border-radius: 0;

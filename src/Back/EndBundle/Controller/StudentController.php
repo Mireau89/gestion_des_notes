@@ -22,7 +22,7 @@ class StudentController extends Controller
 
         $students = $em->getRepository('BackEndBundle:Student')->findAll();
 
-        return $this->render('student/index.html.twig', array(
+        return $this->render('BackEndBundle:Student:index.html.twig', array(
             'students' => $students,
         ));
     }
@@ -45,7 +45,7 @@ class StudentController extends Controller
             return $this->redirectToRoute('student_show', array('id' => $student->getId()));
         }
 
-        return $this->render('student/new.html.twig', array(
+        return $this->render('BackEndBundle:Student:new.html.twig', array(
             'student' => $student,
             'form' => $form->createView(),
         ));
@@ -59,7 +59,7 @@ class StudentController extends Controller
     {
         $deleteForm = $this->createDeleteForm($student);
 
-        return $this->render('student/show.html.twig', array(
+        return $this->render('BackEndBundle:Student:show.html.twig', array(
             'student' => $student,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -81,7 +81,7 @@ class StudentController extends Controller
             return $this->redirectToRoute('student_edit', array('id' => $student->getId()));
         }
 
-        return $this->render('student/edit.html.twig', array(
+        return $this->render('BackEndBundle:Student:edit.html.twig', array(
             'student' => $student,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

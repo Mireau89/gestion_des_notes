@@ -22,7 +22,7 @@ class ModuleController extends Controller
 
         $modules = $em->getRepository('BackEndBundle:Module')->findAll();
 
-        return $this->render('module/index.html.twig', array(
+        return $this->render('BackEndBundle:Module:index.html.twig', array(
             'modules' => $modules,
         ));
     }
@@ -45,7 +45,7 @@ class ModuleController extends Controller
             return $this->redirectToRoute('module_show', array('id' => $module->getId()));
         }
 
-        return $this->render('module/new.html.twig', array(
+        return $this->render('BackEndBundle:Module:new.html.twig', array(
             'module' => $module,
             'form' => $form->createView(),
         ));
@@ -59,7 +59,7 @@ class ModuleController extends Controller
     {
         $deleteForm = $this->createDeleteForm($module);
 
-        return $this->render('module/show.html.twig', array(
+        return $this->render('BackEndBundle:Module:show.html.twig', array(
             'module' => $module,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -81,7 +81,7 @@ class ModuleController extends Controller
             return $this->redirectToRoute('module_edit', array('id' => $module->getId()));
         }
 
-        return $this->render('module/edit.html.twig', array(
+        return $this->render('BackEndBundle:Module:edit.html.twig', array(
             'module' => $module,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

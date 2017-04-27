@@ -36,7 +36,7 @@ class Score
     /**
      * @var int
      *
-     * @ORM\Column(name="testScore", type="smallint", nullable=true)
+     * @ORM\Column(name="testScore", type="smallint", nullable=true, unique=true)
      */
     private $testScore;
 

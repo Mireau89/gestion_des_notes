@@ -110,9 +110,9 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
-                {#
+
                 <li class="treeview">
-                    <a href="{{ path('etudiants_index') }}">
+                    <a href="{{ path('student_index') }}">
                         <i class="fa fa-dashboard"></i> <span>Manage students</span>
                     </a>
                 </li>
@@ -128,7 +128,11 @@
                         <li><a href="{{ path('element_index') }}"><i class="fa fa-circle-o"></i>Manage Elements</a></li>
                     </ul>
                 </li>
-                #}
+                <li class="treeview">
+                    <a href="{{ path('score_index') }}">
+                        <i class="fa fa-dashboard"></i> <span>Enter Exam Scores</span>
+                    </a>
+                </li>
             </ul>
 
         </section>

@@ -1,0 +1,19 @@
+back_end_student:
+    resource: "@BackEndBundle/Resources/config/routing/student.yml"
+    prefix:   /student
+
+back_end_module:
+    resource: "@BackEndBundle/Resources/config/routing/module.yml"
+    prefix:   /module
+
+back_end_element:
+    resource: "@BackEndBundle/Resources/config/routing/element.yml"
+    prefix:   /element
+
+back_end_score:
+    resource: "@BackEndBundle/Resources/config/routing/score.yml"
+    prefix:   /score
+
+back_end_homepage:
+    path:     /
+    defaults: { _controller: BackEndBundle:Default:index }

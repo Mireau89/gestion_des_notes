@@ -1,0 +1,4 @@
+result_result:
+    path:     /
+    defaults: { _controller: "BackEndBundle:Result:result" }
+    methods:  GET

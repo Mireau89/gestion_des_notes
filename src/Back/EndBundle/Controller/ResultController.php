@@ -8,13 +8,50 @@
 
 namespace Back\EndBundle\Controller;
 
-
+use Back\EndBundle\Entity\Score;
+use Back\EndBundle\Entity\Student;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class ResultController extends Controller
 {
  public function resultAction()
  {
-     return $this->render('BackEndBundle:Result:result.html.twig');
+     $em = $this->getDoctrine()->getManager();
+     $students = $em->getRepository('BackEndBundle:Student')->findAll();
+     $score = 0 ;
+     $coeff = 0 ;
+     $i = 0 ;
+     $resultat  = array() ;
+     foreach ($students as $student ){
+         if($student->getScore() != null){
+             foreach ($student->getScore() as $value){
+                 $score += $value->getTestScore() *  $value->getElement()->getCoeff();
+                 $coeff += $value->getElement()->getCoeff() ;
+
+             }
+         }
+         $moyenne = $score / $coeff ;
+         $resultat[$i]['student'] = $student ;
+         $resultat[$i]['moyenne'] = $moyenne ;
+         $i ++ ;
+     }
+
+
+     return $this->render('BackEndBundle:Result:result.html.twig',array(
+         'resultat' => $resultat
+     ));
  }
+
+    public function resultModuleAction(Student $student)
+ {
+     $em = $this->getDoctrine()->getManager();
+
+     $modules = $em->getRepository('BackEndBundle:Module')->findAll();
+     return $this->render('BackEndBundle:Result:resultModule.html.twig',array(
+     'modules' => $modules,
+     'student' => $student
+     ));
+ }
+
 }

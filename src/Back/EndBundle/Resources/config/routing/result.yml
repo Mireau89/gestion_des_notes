@@ -2,3 +2,8 @@ result_result:
     path:     /
     defaults: { _controller: "BackEndBundle:Result:result" }
     methods:  GET
+
+result_resultModule:
+    path:     /{id}/resultModule
+    defaults: { _controller: "BackEndBundle:Result:resultModule" }
+    methods:  GET

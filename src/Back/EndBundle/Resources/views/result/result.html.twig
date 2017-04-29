@@ -3,30 +3,41 @@
 {% block body %}
 <div class="box-header with-border">
     <h3 class="box-title">Results</h3>
-   {# <a href="{{ path('result_module') }}" class="btn btn-default" style="float: right;">Show results by modules</a> #}
 </div>
 
 <div class="container-fluid" style="margin-top: 20px">
     <table class="table table-bordered table-hover">
         <tr>
+            <th>N°</th>
             <th>Codeinscription</th>
             <th>Nom</th>
-            <th>Prenom</th>
+            <th>Prénom</th>
             <th>Moyenne</th>
             <th>Résultat</th>
+            <th>Détails</th>
         </tr>
         </thead>
         <tbody>
-        {#{% for etudiant in etudiants %}#}
+        {% for item in resultat %}
             <tr>
-             {# <td><a href="{{ path('etudiants_show', { 'id': etudiant.id }) }}">{{ etudiant.id }}</a></td>#}
-                <td>02215 {#{{ result.student.codeInscription }}#}</td>
-                <td>marwen {#{{ result.student.nom }}#}</td>
-                <td>agrebi {#{{ resutl.student.prenom }}#}</td>
-                <td>12.25 {#{{ result.moyenne }}#}</td>
-                <td>validé {#{{ result.validation }}#}</td>
+                <td>{{ loop.index }}</td>
+                <td>{{ item.student.insCode }}</td>
+                <td>{{ item.student.firstName }}</td>
+                <td>{{ item.student.lastName }}</td>
+                <td>{{ item.moyenne }}</td>
+                <td>
+                    {% if item.moyenne < 9 %}
+                        Non validé
+                    {% elseif item.moyenne > 9 and item.moyenne < 10 %}
+                        Rattrappage
+                    {% elseif item.moyenne > 10 %}
+                        Validé
+                    {% endif %}
+
+                </td>
+                <td><a href="{{ path('result_resultModule',{'id': item.student.id}) }}" class="btn btn-default">Details</a></td>
             </tr>
-        {#{% endfor %}#}
+        {% endfor %}
         </tbody>
     </table>
 </div>

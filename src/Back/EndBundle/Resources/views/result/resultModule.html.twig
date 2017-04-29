@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="box-header with-border">
+        <h3 class="box-title">{{ "Student: "~student.firstName~" "~student.lastname }}</h3>
+        <ul class="list-unstyled" style="float:right;">
+            <li style="float: left;padding-right: 5px;">
+                <a href="{{ path('result_result') }}" class="btn btn-default">Back to results</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 20px">
+        {% for entity in modules %}
+            {% set coeff = 0 %}
+            {% set score = 0 %}
+            <h2>{{ entity.name }}</h2>
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>element</th>
+                    <th>Coeff</th>
+                    <th>Score</th>
+                    <th>Moyenne Module</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in student.score %}
+                    {% if entity.id == item.element.module.id %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ item.element.name }}</td>
+                            <td>{{ item.element.coeff }}</td>
+                            <td>{{ item.testScore }}</td>
+                            <td>&nbsp;  </td>
+
+                        </tr>
+                        {% set coeff = coeff + item.element.coeff %}
+                        {% set score = score + (item.testScore * item.element.coeff) %}
+                    {% endif %}
+                {% endfor %}
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>{% if score > 0 and coeff > 0 %} {{ score / coeff }} {% endif %} </td>
+
+                </tr>
+                </tbody>
+            </table>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}

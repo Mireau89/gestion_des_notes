@@ -56,6 +56,10 @@ class Student
      */
     private $gender;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Score", mappedBy="student"  )
+     */
+    private $score;
 
     /**
      * Get id
@@ -192,4 +196,46 @@ class Student
         $result = $this->firstName . ' ' . $this->lastName;
         return $result;
     }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->score = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add score
+     *
+     * @param \Back\EndBundle\Entity\Score $score
+     * @return Student
+     */
+    public function addScore(\Back\EndBundle\Entity\Score $score)
+    {
+        $this->score[] = $score;
+
+        return $this;
+    }
+
+    /**
+     * Remove score
+     *
+     * @param \Back\EndBundle\Entity\Score $score
+     */
+    public function removeScore(\Back\EndBundle\Entity\Score $score)
+    {
+        $this->score->removeElement($score);
+    }
+
+    /**
+     * Get score
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
 }

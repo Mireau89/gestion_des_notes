@@ -28,8 +28,6 @@ class ResultController extends Controller
              foreach ($student->getScore() as $value){
                  $score += $value->getTestScore() *  $value->getElement()->getCoeff();
                  $coeff += $value->getElement()->getCoeff() ;
-                echo $score."<br/>";
-                 echo $coeff."<br/>";
              }
          }
          $moyenne = $score / $coeff ;

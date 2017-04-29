@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8fb27b49-c0fd-48b6-9cd4-314b014c8c1a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Back/EndBundle/Controller/ResultController.php" afterPath="$PROJECT_DIR$/src/Back/EndBundle/Controller/ResultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Back/EndBundle/Resources/views/element/edit.html.twig" afterPath="$PROJECT_DIR$/src/Back/EndBundle/Resources/views/element/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Back/EndBundle/Resources/views/module/edit.html.twig" afterPath="$PROJECT_DIR$/src/Back/EndBundle/Resources/views/module/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Back/EndBundle/Resources/views/student/new.html.twig" afterPath="$PROJECT_DIR$/src/Back/EndBundle/Resources/views/student/new.html.twig" />
     </list>
     <ignored path="gestion_des_notes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,8 +116,8 @@
       <file leaf-file-name="ResultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Back/EndBundle/Controller/ResultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+            <state relative-caret-position="397">
+              <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="true" />
                 <element signature="e#129#161#0#PHP" expanded="true" />
@@ -591,12 +588,12 @@
       <workItem from="1492954854182" duration="28401000" />
       <workItem from="1493227111735" duration="1731000" />
       <workItem from="1493264823360" duration="52677000" />
-      <workItem from="1493405230945" duration="15646000" />
+      <workItem from="1493405230945" duration="16103000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115486000" />
+    <option name="totallyTimeSpent" value="115943000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1039,8 +1036,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Back/EndBundle/Controller/ResultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+        <state relative-caret-position="397">
+          <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
             <element signature="e#129#161#0#PHP" expanded="true" />

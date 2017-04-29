@@ -19,16 +19,17 @@ class ResultController extends Controller
  {
      $em = $this->getDoctrine()->getManager();
      $students = $em->getRepository('BackEndBundle:Student')->findAll();
-     $score = 0 ;
-     $coeff = 0 ;
      $i = 0 ;
      $resultat  = array() ;
      foreach ($students as $student ){
+         $score = 0 ;
+         $coeff = 0 ;
          if($student->getScore() != null){
              foreach ($student->getScore() as $value){
                  $score += $value->getTestScore() *  $value->getElement()->getCoeff();
                  $coeff += $value->getElement()->getCoeff() ;
-
+                echo $score."<br/>";
+                 echo $coeff."<br/>";
              }
          }
          $moyenne = $score / $coeff ;

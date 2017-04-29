@@ -15,22 +15,44 @@
         </ul>
     </div>
 
-<div class="container" style="padding-top: 10px;">
-    {{ form_start(edit_form) }}
-    <div class="form-group row">
-        <div class="col-md-2 col-md-offset-2">
-            {{ form_label(edit_form.testScore, null, {'label':'Note'}) }}
+    <div class="container" style="padding-top: 10px;">
+        {{ form_start(edit_form) }}
+        <div class="form-group row">
+            <div class="col-md-2 col-md-offset-2">
+                {{ form_label(edit_form.testScore) }}
+            </div>
+            <div class="col-md-5">
+                {{ form_errors(edit_form.testScore) }}
+
+                {{ form_widget(edit_form.testScore) }}
+            </div>
         </div>
-        <div class="col-md-5">
-            {{ form_widget(edit_form.testScore, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+        <div class="form-group row">
+            <div class="col-md-2 col-md-offset-2">
+                {{ form_label(edit_form.student) }}
+            </div>
+            <div class="col-md-5">
+                {{ form_errors(edit_form.student) }}
+
+                {{ form_widget(edit_form.student) }}
+            </div>
         </div>
+        <div class="form-group row">
+            <div class="col-md-2 col-md-offset-2">
+                {{ form_label(edit_form.element) }}
+            </div>
+            <div class="col-md-5">
+                {{ form_errors(edit_form.element) }}
+
+                {{ form_widget(edit_form.element) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2 col-md-offset-4">
+                <input type="submit" value="Edit" class="btn btn-primary btn-lg"/>
+            </div>
+        </div>
+        {{ form_end(edit_form) }}
     </div>
-    <div class="form-group row">
-        <div class="col-md-2 col-md-offset-4">
-            <input type="submit" value="Edit" class="btn btn-primary btn-lg"/>
-        </div>
-    </div>
-    {{ form_end(edit_form) }}
-</div>
 
 {% endblock %}

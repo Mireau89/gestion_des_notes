@@ -11,10 +11,29 @@
         {{ form_start(form) }}
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-2">
-                {{ form_label(form.testScore, null, {'label':'Note'}) }}
+                {{ form_label(form.testScore) }}
             </div>
             <div class="col-md-5">
-                {{ form_widget(form.testScore, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+                {{ form_errors(form.testScore) }}
+                {{ form_widget(form.testScore) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2 col-md-offset-2">
+                {{ form_label(form.student) }}
+            </div>
+            <div class="col-md-5">
+                {{ form_errors(form.student) }}
+                {{ form_widget(form.student) }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-2 col-md-offset-2">
+                {{ form_label(form.element) }}
+            </div>
+            <div class="col-md-5">
+                {{ form_errors(form.element) }}
+                {{ form_widget(form.element) }}
             </div>
         </div>
         <div class="form-group row">

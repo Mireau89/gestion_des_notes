@@ -34,9 +34,9 @@ class Score
     protected $element;
 
     /**
-     * @var int
+     * @var float
      *
-     * @ORM\Column(name="testScore", type="smallint", nullable=true, unique=true)
+     * @ORM\Column(name="testScore", type="float", nullable=true, unique=false)
      */
     private $testScore;
 

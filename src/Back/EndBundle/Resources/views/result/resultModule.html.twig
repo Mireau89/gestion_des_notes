@@ -46,7 +46,7 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td>{% if score > 0 and coeff > 0 %} {{ score / coeff }} {% endif %} </td>
+                    <td>{% if score > 0 and coeff > 0 %} {{ (score / coeff) | number_format(2)}} {% endif %} </td>
 
                 </tr>
                 </tbody>

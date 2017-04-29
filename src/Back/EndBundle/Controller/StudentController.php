@@ -57,9 +57,29 @@ class StudentController extends Controller
      */
     public function showAction(Student $student)
     {
-        $deleteForm = $this->createDeleteForm($student);
+        $em = $this->getDoctrine()->getManager();
 
+        $modules = $em->getRepository('BackEndBundle:Module')->findAll();
+
+        $deleteForm = $this->createDeleteForm($student);
+        $score = 0 ;
+        $coeff = 0 ;
+
+        if($student->getScore() != null){
+            foreach ($student->getScore() as $value){
+                $score += $value->getTestScore() *  $value->getElement()->getCoeff();
+                $coeff += $value->getElement()->getCoeff() ;
+
+            }
+        }
+        if ($coeff!=0) {
+            $moyenne = $score / $coeff;
+        } else {
+            $moyenne = 'Not calculated yet';
+        }
         return $this->render('BackEndBundle:Student:show.html.twig', array(
+            'modules' => $modules,
+            'moyenne' => $moyenne,
             'student' => $student,
             'delete_form' => $deleteForm->createView(),
         ));

@@ -13,7 +13,14 @@ class ModuleType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('abbr')->add('elementNbr');
+        $builder
+
+
+            ->add('name', null, array('label' => 'Nom *' , 'required' => true, 'attr' => array('class' => 'form-control ' , 'placeholder' => 'Enter...')))
+            ->add('abbr', null, array('label' => 'Abbréviation *' , 'required' => true, 'attr' => array('class' => 'form-control ' , 'placeholder' => 'Enter...')))
+            ->add('elementNbr', null, array('label' => 'Nombre des élements *' , 'required' => true, 'attr' => array('class' => 'form-control ' , 'placeholder' => 'Enter...')))
+
+        ;
     }
     
     /**

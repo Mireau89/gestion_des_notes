@@ -13,9 +13,15 @@ class ScoreType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('testScore')->add('student')->add('element');
+        $builder
+
+            ->add('testScore', null, array('label' => 'Note *' , 'required' => true, 'attr' => array('class' => 'form-control ' , 'placeholder' => 'Enter...')))
+            ->add('student', null, array('label' => 'Student *' , 'required' => true, 'attr' => array('class' => 'form-control ' , 'placeholder' => 'Enter...')))
+            ->add('element', null, array('label' => 'Element *' , 'required' => true, 'attr' => array('class' => 'form-control ' , 'placeholder' => 'Enter...')))
+
+        ;
     }
-    
+
     /**
      * {@inheritdoc}
      */

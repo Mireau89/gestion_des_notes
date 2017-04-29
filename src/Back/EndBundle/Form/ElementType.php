@@ -13,7 +13,13 @@ class ElementType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('abbr')->add('coeff')->add('module');
+        $builder
+            ->add('name', null, array('label' => 'Nom *' , 'required' => true, 'attr' => array('class' => 'form-control ' , 'placeholder' => 'Enter...')))
+            ->add('abbr', null, array('label' => 'Abbréviation *' , 'required' => true, 'attr' => array('class' => 'form-control '  , 'placeholder' => 'Enter...')))
+            ->add('coeff', null, array('label' => 'Coefficient *' , 'required' => true, 'attr' => array('class' => 'form-control '  , 'placeholder' => 'Enter...')))
+            ->add('module', null, array('label' => 'Module *' , 'required' => true, 'attr' => array('class' => 'form-control '  )))
+
+        ;
     }
     
     /**

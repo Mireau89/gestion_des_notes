@@ -3,55 +3,63 @@
 {% block body %}
     <div class="box-header with-border">
         <h3 class="box-title">Student creation</h3>
-       <a href="{{ path('student_index') }}" class="btn btn-default" style="float: right;">Back to the list</a>
+        <a href="{{ path('student_index') }}" class="btn btn-default" style="float: right;">Back to the list</a>
     </div>
 
-    <div class="container" style="padding-top: 10px">
+    <div class="container" style="padding-top: 10px;">
         {{ form_start(form) }}
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-2">
-                {{ form_label(form.insCode, null, {'label':'Code Inscription'}) }}
+                {{ form_label(form.insCode) }}
             </div>
             <div class="col-md-5">
-                {{ form_widget(form.insCode, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+                {{ form_errors(form.insCode) }}
+
+                {{ form_widget(form.insCode) }}
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-2">
-                {{ form_label(form.firstName, null, {'label':'First Name'}) }}
+                {{ form_label(form.firstName) }}
             </div>
             <div class="col-md-5">
-                {{ form_widget(form.firstName, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+
+                {{ form_errors(form.firstName) }}
+                {{ form_widget(form.firstName) }}
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-2">
-                {{ form_label(form.lastName, null, {'label':'Last Name'}) }}
+                {{ form_label(form.lastName) }}
             </div>
             <div class="col-md-5">
-                {{ form_widget(form.lastName, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+                {{ form_errors(form.lastName) }}
+                {{ form_widget(form.lastName) }}
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-2">
-                {{ form_label(form.age, null, {'label':'Age'}) }}
+                {{ form_label(form.age) }}
             </div>
             <div class="col-md-5">
-                {{ form_widget(form.age, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+                {{ form_errors(form.age) }}
+                {{ form_widget(form.age) }}
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-2">
-                {{ form_label(form.gender, null, {'label':'Gender'}) }}
+                {{ form_label(form.gender) }}
             </div>
             <div class="col-md-5">
-                {{ form_widget(form.gender, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+                {{ form_errors(form.gender) }}
+                {{ form_widget(form.gender) }}
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-4">
-                <input type="submit" value="Create" class="btn btn-primary btn-lg"/>
+                <input type="submit" value="Edit" class="btn btn-primary btn-lg"/>
             </div>
+
         </div>
         {{ form_end(form) }}
     </div>

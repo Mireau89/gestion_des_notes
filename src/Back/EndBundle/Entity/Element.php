@@ -42,9 +42,9 @@ class Element
     private $abbr;
 
     /**
-     * @var int
+     * @var float
      *
-     * @ORM\Column(name="coeff", type="smallint")
+     * @ORM\Column(name="coeff", type="float")
      */
     private $coeff;
 

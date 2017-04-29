@@ -13,7 +13,15 @@ class StudentType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('insCode')->add('firstName')->add('lastName')->add('age')->add('gender');
+        $builder
+
+            ->add('insCode', null, array('label' => 'Code Inscription *' , 'required' => true, 'attr' => array('class' => 'form-control ' , 'placeholder' => 'Enter...')))
+            ->add('firstName', null, array('label' => 'First Name *' , 'required' => true, 'attr' => array('class' => 'form-control ' , 'placeholder' => 'Enter...')))
+            ->add('lastName', null, array('label' => 'Last Name *' , 'required' => true, 'attr' => array('class' => 'form-control ' , 'placeholder' => 'Enter...')))
+            ->add('age', null, array('label' => 'Age *' , 'required' => true, 'attr' => array('class' => 'form-control ' , 'placeholder' => 'Enter...')))
+            ->add('gender', null, array('label' => 'Gender *' , 'required' => true, 'attr' => array('class' => 'form-control ' , 'placeholder' => 'Enter...')))
+
+        ;
     }
     
     /**

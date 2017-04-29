@@ -14,35 +14,41 @@
         </ul>
     </div>
 
-    <div class="container" style="padding-top: 10px">
+
+    <div class="container-fluid" style="padding-top: 10px">
         {{ form_start(edit_form) }}
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-2">
-                {{ form_label(edit_form.name, null, {'label':'Nom'}) }}
+                {{ form_label(edit_form.name) }}
             </div>
             <div class="col-md-5">
-                {{ form_widget(edit_form.name, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+                {{ form_errors(edit_form.name) }}
+                {{ form_widget(edit_form.name) }}
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-2">
-                {{ form_label(edit_form.abbr, null, {'label':'Abbréviation'}) }}
+                {{ form_label(edit_form.abbr) }}
             </div>
             <div class="col-md-5">
-                {{ form_widget(edit_form.abbr, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+
+                {{ form_errors(edit_form.abbr) }}
+                {{ form_widget(edit_form.abbr) }}
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-2">
-                {{ form_label(edit_form.elementNbr, null, {'label':'Nombre des élements'}) }}
+                {{ form_label(edit_form.elementNbr) }}
             </div>
             <div class="col-md-5">
-                {{ form_widget(edit_form.elementNbr, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+                {{ form_errors(edit_form.elementNbr) }}
+
+                {{ form_widget(edit_form.elementNbr) }}
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-4">
-                <input type="submit" value="Edit" class="btn btn-primary btn-lg"/>
+                <input type="submit" value="Create" class="btn btn-primary btn-lg"/>
             </div>
         </div>
         {{ form_end(edit_form) }}

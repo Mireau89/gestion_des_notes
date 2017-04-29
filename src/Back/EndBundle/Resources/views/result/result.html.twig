@@ -24,7 +24,7 @@
                 <td>{{ item.student.insCode }}</td>
                 <td>{{ item.student.firstName }}</td>
                 <td>{{ item.student.lastName }}</td>
-                <td>{{ item.moyenne }}</td>
+                <td>{{ item.moyenne | number_format(2) }}</td>
                 <td>
                     {% if item.moyenne < 9 %}
                         Non validé

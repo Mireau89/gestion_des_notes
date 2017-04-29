@@ -10,28 +10,45 @@
         {{ form_start(form) }}
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-2">
-                {{ form_label(form.name, null, {'label':'Nom'}) }}
+                {{ form_label(form.name) }}
             </div>
             <div class="col-md-5">
-                {{ form_widget(form.name, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+                {{ form_errors(form.name) }}
+                {{ form_widget(form.name) }}
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-2">
-                {{ form_label(form.abbr, null, {'label':'Abbréviation'}) }}
+                {{ form_label(form.abbr) }}
             </div>
             <div class="col-md-5">
-                {{ form_widget(form.abbr, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+                {{ form_errors(form.abbr) }}
+
+                {{ form_widget(form.abbr) }}
             </div>
         </div>
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-2">
-                {{ form_label(form.coeff, null, {'label':'Coefficient'}) }}
+                {{ form_label(form.coeff) }}
             </div>
             <div class="col-md-5">
-                {{ form_widget(form.coeff, {'attr': {'type':'text','class':'form-control','placeholder':'Enter...' }}) }}
+                {{ form_errors(form.coeff) }}
+
+                {{ form_widget(form.coeff) }}
             </div>
         </div>
+
+        <div class="form-group row">
+            <div class="col-md-2 col-md-offset-2">
+                {{ form_label(form.module) }}
+            </div>
+            <div class="col-md-5">
+                {{ form_errors(form.module) }}
+
+                {{ form_widget(form.module) }}
+            </div>
+        </div>
+
         <div class="form-group row">
             <div class="col-md-2 col-md-offset-4">
                 <input type="submit" value="Create" class="btn btn-primary btn-lg"/>
